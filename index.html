@@ -17,6 +17,15 @@
       crossorigin="anonymous"
     />
 
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <!-- Main CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -25,10 +34,17 @@
       <div class="row">
         <div class="form-box d-flex justify-content-center mx-auto">
           <div class="col-5">
+            <div id="steps-box" class="position-absolute">
+              <i
+                id="close-steps-box"
+                class="fa-solid fa-xmark position-absolute"
+              ></i>
+              <p id="steps-box-content" class="position-relative"></p>
+            </div>
             <img
               class="form-box__img"
-              src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=480&q=80"
-              alt="food img"
+              src="https://images.unsplash.com/photo-1587093336587-eeca6cb17cf2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80"
+              alt="a random img"
             />
           </div>
           <div class="col-7">
@@ -54,31 +70,79 @@
                 </button>
               </li>
             </ul>
+
+            <button id="btn-steps-show" class="btn btn-info text-capitalize">
+              <strong>Show Steps</strong>
+            </button>
+
+            <hr />
+
             <!-- Question 1 form -->
-            <!-- <form class="form-group" action=""></form> -->
+            <div class="question question-1 row">
+              <form class="form-group form-group--active" action="">
+                Hello1
+              </form>
+            </div>
 
             <!-- Question 2 form -->
-            <!-- <form class="form-group" action="">
-              <label for="family-members">Who are using this computer?</label>
-              <select
-                id="family-members"
-                name="family-member-list"
-                form="family-member-list"
-              >
-                <option value="Empty">No one</option>
-                <option value="B">👨🏻 Bố</option>
-                <option value="M">👩🏻 Mẹ</option>
-                <option value="A">👦🏻 Anh trai</option>
-                <option value="E">👩🏻‍🦱 Em gái</option>
-              </select>
-              <p id="demo"></p>
-            </form> -->
+            <div class="question question-2 row">
+              <form class="form-group" action="">
+                <label for="family-members"
+                  >🤖: "Who are using this computer?"</label
+                >
+                <select
+                  id="family-members"
+                  name="family-member-list"
+                  form="family-member-list"
+                >
+                  <option value="Empty">No one</option>
+                  <option value="B">👨🏻 Bố</option>
+                  <option value="M">👩🏻 Mẹ</option>
+                  <option value="A">👦🏻 Anh trai</option>
+                  <option value="E">👩🏻‍🦱 Em gái</option>
+                </select>
+              </form>
+              <p id="q1-result"></p>
+            </div>
 
             <!-- Question 3 form -->
-            <form class="form-group" action=""></form>
+            <div class="question question-3 row">
+              <div class="col-5">
+                <form class="form-group text-center">
+                  <label for="number1">The first number</label><br />
+                  <input
+                    class="q3-input"
+                    type="text"
+                    placeholder="Enter the first number"
+                  /><br />
+                  <label for="number2">The second number</label><br />
+                  <input
+                    class="q3-input"
+                    type="text"
+                    placeholder="Enter the second number"
+                  /><br />
+                  <label for="number3">The third number</label><br />
+                  <input
+                    class="q3-input"
+                    type="text"
+                    placeholder="Enter the third number"
+                  /><br />
+                  <a href="#" id="btn-q3-submit" class="btn btn-warning mt-4"
+                    >SUBMIT</a
+                  >
+                </form>
+              </div>
+              <div class="col-7">
+                <p id="q3-result" class="alert alert-info mt-2">
+                  Notification here ❗
+                </p>
+              </div>
+            </div>
 
             <!-- Question 4 form -->
-            <!-- <form class="form-group" action=""></form> -->
+            <div class="question question-4 row">
+              <form class="form-group" action="">Hello4</form>
+            </div>
           </div>
         </div>
       </div>
