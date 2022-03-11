@@ -65,30 +65,31 @@ for (let i = 0; i < qShowBtn.length; ++i) {
 
 // ------- QUESTION 1 -------
 
+console.log(smallest, middle, largest);
 // ------- QUESTION 2 -------
 const familyMembers = document.getElementById("family-members"),
-  q1Result = document.getElementById("q1-result");
+  q2Result = document.getElementById("q2-result");
 
 familyMembers.onchange = function () {
-  q1Result.innerHTML = "Processing";
+  q2Result.innerHTML = "Processing";
   let counter = 0;
   let myVar = setInterval(function () {
-    q1Result.innerHTML += " . ";
+    q2Result.innerHTML += " . ";
     counter++;
     if (counter == 4) {
       clearInterval(myVar);
       switch (familyMembers.value) {
         case "B":
-          q1Result.innerHTML = "👨🏻 Hello Bố!";
+          q2Result.innerHTML = "👨🏻 Hello Bố!";
           break;
         case "M":
-          q1Result.innerHTML = "👩🏻 Hello Mẹ!";
+          q2Result.innerHTML = "👩🏻 Hello Mẹ!";
           break;
         case "A":
-          q1Result.innerHTML = "👦🏻 Hello Anh trai!";
+          q2Result.innerHTML = "👦🏻 Hello Anh trai!";
           break;
         case "E":
-          q1Result.innerHTML = "👩🏻‍🦱 Hello Em gái!";
+          q2Result.innerHTML = "👩🏻‍🦱 Hello Em gái!";
           break;
         default:
           break;
@@ -140,17 +141,17 @@ q4SubmitBtn.onclick = function () {
   if (
     !(edge1 + edge2 > edge3 && edge1 + edge3 > edge2 && edge2 + edge3 > edge1)
   ) {
-    q4Result.innerHTML = `These 3 edges cannot form a triangle🚫`;
+    q4Result.innerHTML = `🚫These 3 edges cannot form a triangle.`;
     return;
   }
 
   // Tam giac can
   if (edge1 === edge2 || edge1 === edge3 || edge2 === edge3)
-    q4Result.innerHTML += `- These 3 edges form a <strong>isosceles triangle</strong><br>`;
+    q4Result.innerHTML += `- These 3 edges form a <strong>isosceles triangle</strong>.<br>`;
 
   // Tam giac deu
   if (edge1 === edge2 && edge2 === edge3)
-    q4Result.innerHTML += `- These 3 edges form a <strong>equilateral triangle</strong><br>`;
+    q4Result.innerHTML += `- These 3 edges form a <strong>equilateral triangle</strong>.<br>`;
 
   // Tam giac vuong
   if (
@@ -158,5 +159,5 @@ q4SubmitBtn.onclick = function () {
     edge1 ** 2 + edge3 ** 2 === edge2 ** 2 ||
     edge2 ** 2 + edge3 ** 3 === edge1 ** 2
   )
-    q4Result.innerHTML += `- These 3 edges form a <strong>right-angled  triangle</strong><br>`;
+    q4Result.innerHTML += `- These 3 edges form a <strong>right-angled  triangle</strong>.<br>`;
 };

@@ -116,7 +116,7 @@ li {
   cursor: pointer;
 }
 
-#q1-result {
+#q2-result {
   font-size: 40px;
   width: 400px;
   text-align: center;
@@ -131,7 +131,7 @@ input {
   padding: 8px 20px;
   border: none;
   background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 999px;
+  border-radius: 5px;
 }
 
 input:focus {

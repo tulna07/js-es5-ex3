@@ -98,7 +98,36 @@
 
             <!-- Question 1 form -->
             <div class="question question-1">
-              <form class="form-group" action="">Hello1</form>
+              <div class="col-5">
+                <form class="form-group text-center">
+                  <label for="number1">The first number</label><br />
+                  <input
+                    class="q1-input"
+                    type="text"
+                    placeholder="Enter the first number"
+                  /><br />
+                  <label for="number2">The second number</label><br />
+                  <input
+                    class="q1-input"
+                    type="text"
+                    placeholder="Enter the second number"
+                  /><br />
+                  <label for="number3">The third number</label><br />
+                  <input
+                    class="q1-input"
+                    type="text"
+                    placeholder="Enter the third number"
+                  /><br />
+                  <a href="#" id="btn-q1-submit" class="btn btn-warning mt-4"
+                    >SUBMIT</a
+                  >
+                </form>
+              </div>
+              <div class="col-7">
+                <p id="q1-result" class="alert alert-info mt-2">
+                  Notification here ❗
+                </p>
+              </div>
             </div>
 
             <!-- Question 2 form -->
@@ -119,7 +148,7 @@
                   <option value="E">👩🏻‍🦱 Em gái</option>
                 </select>
               </form>
-              <p id="q1-result"></p>
+              <p id="q2-result"></p>
             </div>
 
             <!-- Question 3 form -->
