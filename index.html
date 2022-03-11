@@ -26,15 +26,29 @@
       referrerpolicy="no-referrer"
     />
 
+    <!-- Animate CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <!-- Main CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body id="body">
     <div class="container">
       <div class="row">
-        <div class="form-box d-flex justify-content-center mx-auto">
+        <div
+          class="form-box d-flex justify-content-center mx-auto animate__animated animate__zoomIn"
+        >
           <div class="col-5">
-            <div id="steps-box" class="position-absolute">
+            <div
+              id="steps-box"
+              class="position-absolute animate__animated animate__fadeIn"
+            >
               <i
                 id="close-steps-box"
                 class="fa-solid fa-xmark position-absolute"
@@ -78,14 +92,12 @@
             <hr />
 
             <!-- Question 1 form -->
-            <div class="question question-1 row">
-              <form class="form-group form-group--active" action="">
-                Hello1
-              </form>
+            <div class="question question-1">
+              <form class="form-group" action="">Hello1</form>
             </div>
 
             <!-- Question 2 form -->
-            <div class="question question-2 row">
+            <div class="question question-2">
               <form class="form-group" action="">
                 <label for="family-members"
                   >🤖: "Who are using this computer?"</label
@@ -106,7 +118,7 @@
             </div>
 
             <!-- Question 3 form -->
-            <div class="question question-3 row">
+            <div class="question question-3">
               <div class="col-5">
                 <form class="form-group text-center">
                   <label for="number1">The first number</label><br />
@@ -140,7 +152,7 @@
             </div>
 
             <!-- Question 4 form -->
-            <div class="question question-4 row">
+            <div class="question question-4">
               <form class="form-group" action="">Hello4</form>
             </div>
           </div>

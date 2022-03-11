@@ -105,6 +105,10 @@ li {
   left: 0;
 }
 
+#steps-box-content {
+  font-size: 15px;
+}
+
 #close-steps-box {
   font-size: 24px;
   top: 12px;
