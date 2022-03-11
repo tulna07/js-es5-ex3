@@ -7,7 +7,16 @@ const questions = document.getElementsByClassName("question"),
   closeStepBoxBtn = document.getElementById("close-steps-box");
 
 // Steps in 3-block model
-const q1Steps = ``,
+const q1Steps = `<strong style="text-decoration: underline;">Đề bài:</strong> Cho người dùng nhập vào 3 số. Viết chương trình xuất 3 số theo thứ tự tăng dần. Giả sử inputs hợp lệ, có thể so sánh số.<br>
+<strong style="text-decoration: underline;">Lời giải:</strong><br>
+<strong>Đầu vào:</strong> Nhập giá trị bất kỳ vào trong 3 ô inputs.<br>
+<strong>Xử lý:</strong><br>
+ <strong>- Bước 1:</strong> Thiết kế giao diện, cho người dùng nhập giá trị vào trong 3 inputs.<br>
+ <strong>- Bước 2:</strong> Lấy 2 giá trị ngẫu nhiên từ 3 giá trị nhận được ở giao diện và so sánh, chọn ra một số lớn hơn và một số bé hơn giữa hai số này.<br>
+ <strong>- Bước 3:</strong> Lấy số lớn hơn so sánh với số còn lại chưa được xét trong 3 số ở giao diện, nếu số này lớn hơn số được xét lớn hơn ở bước 2 thì ta nhận số này số lớn nhất -> ở bước 2, số lớn hơn sẽ là số trung gian, số bé hơn sẽ là số nhỏ nhất.<br>
+ <strong>- Bước 4:</strong> Ngược lại với giả sử ở bước 3 -> số lớn hơn ở bước 2 sẽ là số lớn nhất, sau đó ta lại tiếp tục so sánh 2  số còn lại để tìm ra vị trí của chúng.<br>
+ <strong>- Bước 5:</strong> Xuất kết quả tương ứng từ bước 3 hoặc 4 (dãy số theo thứ tự tăng dần đều) ra giao diện.<br>
+<strong>Đầu ra:</strong> Xuất ra ba số theo thứ tự tăng dần đều.`,
   q2Steps = `<strong style="text-decoration: underline;">Đề bài:</strong> Viết chương trình “Chào hỏi” các thành viên trong gia đình với các đặc điểm. Đầu tiên máy sẽ hỏi ai sử dụng máy. Sau đó dựa vào câu trả lời và đưa ra lời chào phù hợp. Giả sử trong gia đình có 4 thành viên: Bố (B), Mẹ (M), anh Trai (A) và Em gái (E).<br>
   <strong style="text-decoration: underline;">Lời giải:</strong><br>
   <strong>Đầu vào:</strong> Chọn một trong bốn thành viên trong gia đình gồm Bố, Mẹ, Anh trai và Em gái.<br>
@@ -16,7 +25,7 @@ const q1Steps = ``,
    <strong>- Bước 2:</strong> Lấy giá trị nhận được từ giao diện, so sánh bằng switch statement để đưa ra kết quả phù hợp.<br>
    <strong>- Bước 3:</strong> Xuất kết quả nhận được từ bước 2 ra giao diện.<br>
   <strong>Đầu ra:</strong> Xuất ra lời chào phù hợp với thành viên trong gia đình được chọn.`,
-  q3Steps = `<strong style="text-decoration: underline;">Đề bài:</strong> Cho 3 số nguyên. Viết chương trình xuất ra có bao nhiêu số lẻ và bao nhiêu số chẵn.<br>
+  q3Steps = `<strong style="text-decoration: underline;">Đề bài:</strong> Cho 3 số. Viết chương trình xuất ra có bao nhiêu số lẻ và bao nhiêu số chẵn.<br>
   <strong style="text-decoration: underline;">Lời giải:</strong><br>
   <strong>Đầu vào:</strong> Nhập giá trị bất kỳ vào trong 3 ô inputs.<br>
   <strong>Xử lý:</strong><br>
@@ -64,8 +73,36 @@ for (let i = 0; i < qShowBtn.length; ++i) {
 }
 
 // ------- QUESTION 1 -------
+const nums = document.getElementsByClassName("q1-input"),
+  q1SubmitBtn = document.getElementById("btn-q1-submit"),
+  q1Result = document.getElementById("q1-result");
 
-console.log(smallest, middle, largest);
+q1SubmitBtn.onclick = function () {
+  const num1 = nums[0].value,
+    num2 = nums[1].value,
+    num3 = nums[2].value;
+
+  var smallest, middle, largest;
+
+  (() => {
+    (middle = num1 > num2 ? num1 : num2),
+      (smallest = middle == num1 ? num2 : num1);
+
+    if (num3 > middle) {
+      largest = num3;
+      // middle: second largest
+      // smallest: smallest
+      return;
+    }
+
+    largest = middle;
+    middle = smallest > num3 ? smallest : num3;
+    smallest = middle == num3 ? smallest : num3;
+  })();
+
+  q1Result.innerHTML = `3 numbers in ascending order: ${smallest}, ${middle}, ${largest}.`;
+};
+
 // ------- QUESTION 2 -------
 const familyMembers = document.getElementById("family-members"),
   q2Result = document.getElementById("q2-result");

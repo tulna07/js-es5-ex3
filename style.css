@@ -23,13 +23,13 @@ li {
 }
 
 .form-box {
-  margin-top: 60px;
+  margin-top: 45px;
   overflow: hidden;
   border-radius: 20px;
 
   background-color: white;
   width: 1000px;
-  height: 480px;
+  height: 530px;
 
   position: relative;
 }
@@ -87,7 +87,7 @@ li {
 #steps-box {
   display: none;
   color: #fff;
-  padding: 30px 20px;
+  padding: 20px;
   width: 100%;
   height: 100%;
   top: 0;
