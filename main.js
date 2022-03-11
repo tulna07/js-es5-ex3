@@ -117,3 +117,37 @@ q3SubmitBtn.onclick = function () {
   q3Result.innerHTML = `- There are <strong>${odd} odd</strong> number(s) which are <strong>${oddNums.toString()}</strong><br> - There are <strong>${even} even</strong> number(s) which are <strong>${evenNums.toString()}</strong>`;
 };
 // ------- QUESTION 4 -------
+const edges = document.getElementsByClassName("q4-input"),
+  q4SubmitBtn = document.getElementById("btn-q4-submit"),
+  q4Result = document.getElementById("q4-result");
+
+q4SubmitBtn.onclick = function () {
+  q4Result.innerHTML = "";
+
+  const edge1 = +edges[0].value,
+    edge2 = +edges[1].value,
+    edge3 = +edges[2].value;
+
+  if (
+    !(edge1 + edge2 > edge3 && edge1 + edge3 > edge2 && edge2 + edge3 > edge1)
+  ) {
+    q4Result.innerHTML = `These 3 edges cannot form a triangle🚫`;
+    return;
+  }
+
+  // Tam giac can
+  if (edge1 === edge2 || edge1 === edge3 || edge2 === edge3)
+    q4Result.innerHTML += `- These 3 edges form a <strong>isosceles triangle</strong><br>`;
+
+  // Tam giac deu
+  if (edge1 === edge2 && edge1 === edge3 && edge1 === edge3)
+    q4Result.innerHTML += `- These 3 edges form a <strong>equilateral triangle</strong><br>`;
+
+  // Tam giac vuong
+  if (
+    edge1 ** 2 + edge2 ** 2 === edge3 ** 2 ||
+    edge1 ** 2 + edge3 ** 2 === edge2 ** 2 ||
+    edge2 ** 2 + edge3 ** 3 === edge1 ** 2
+  )
+    q4Result.innerHTML += `- These 3 edges form a <strong>right-angled  triangle</strong><br>`;
+};

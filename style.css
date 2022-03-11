@@ -127,14 +127,14 @@ li {
   transform: translate(-50%, -50%);
 }
 
-.q3-input {
+input {
   padding: 8px 20px;
   border: none;
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 999px;
 }
 
-.q3-input:focus {
+input:focus {
   outline: none;
 }
 
