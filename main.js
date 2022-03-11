@@ -18,7 +18,7 @@ const q1Steps = ``,
   <strong>Đầu ra:</strong> Xuất ra lời chào phù hợp với thành viên trong gia đình được chọn.`,
   q3Steps = `<strong style="text-decoration: underline;">Đề bài:</strong> Cho 3 số nguyên. Viết chương trình xuất ra có bao nhiêu số lẻ và bao nhiêu số chẵn.<br>
   <strong style="text-decoration: underline;">Lời giải:</strong><br>
-  <strong>Đầu vào:</strong> Nhập giá trị vào 3 ô input từ giao diện.<br>
+  <strong>Đầu vào:</strong> Nhập giá trị bất kỳ vào trong 3 ô inputs.<br>
   <strong>Xử lý:</strong><br>
    <strong>- Bước 1:</strong> Thiết kế giao diện, cho người dùng nhập giá trị vào trong 3 inputs.<br>
    <strong>- Bước 2:</strong> Lấy giá trị nhận được từ giao diện, lọc ra xem có phải các giá trị nhận được là số nguyên hay không.<br>
@@ -26,7 +26,16 @@ const q1Steps = ``,
    <strong>- Bước 4:</strong> Nếu là số nguyên thì xét xem là số chẵn hay số lẻ, sau đó tăng biến đếm số lượng số chẵn, số lẻ lên, đồng thời đưa vào mảng chứa các số chẵn, số lẻ tương ứng.<br>
    <strong>- Bước 5:</strong> Xuất kết quả nhận được từ bước 4 ra giao diện sau khi đã xét xong cả 3 số.<br>
   <strong>Đầu ra:</strong> Xuất ra số lượng số lẻ, là những số nào, tương tự đối với số chẵn.`,
-  q4Steps = "q4";
+  q4Steps = `<strong style="text-decoration: underline;">Đề bài:</strong> Viết chương trình cho nhập 3 cạnh của tam giác. Hãy cho biết đó là tam giác gì trong 3 loại: tam giác vuông, tam giác đều, tam giác cân.<br>
+  <strong style="text-decoration: underline;">Lời giải:</strong><br>
+  <strong>Đầu vào:</strong> Nhập giá trị 3 cạnh tam giác vào 3 ô inputs vào giao diện.<br>
+  <strong>Xử lý:</strong><br>
+   <strong>- Bước 1:</strong> Thiết kế giao diện, cho người dùng nhập giá trị 3 cạnh tam giác vào 3 ô input vào giao diện.<br>
+   <strong>- Bước 2:</strong> Lấy giá trị nhận được từ giao diện, xét xem các cạnh này là cạnh của một tam giác hay không.<br>
+   <strong>- Bước 3:</strong> Nếu không là cạnh của tam giác thì in ra thông báo và kết thúc xét loại tam giác.<br>
+   <strong>- Bước 4:</strong> Nếu là 3 cạnh của một tam giác thì xét điều kiện tam giác đều, tam giác cân, tam giác vuông.<br>
+   <strong>- Bước 5:</strong> Xuất kết quả tam giác tương ứng từ bước 4 ra giao diện sau khi đã xét xong cả 3 loại tam giác.<br>
+  <strong>Đầu ra:</strong> Xuất ra loại tam giác tương ứng nếu là tam giác, không thì xuất ra không đủ điều kiện tạo thành tam giác.`;
 
 const qSteps = [q1Steps, q2Steps, q3Steps, q4Steps];
 
@@ -140,7 +149,7 @@ q4SubmitBtn.onclick = function () {
     q4Result.innerHTML += `- These 3 edges form a <strong>isosceles triangle</strong><br>`;
 
   // Tam giac deu
-  if (edge1 === edge2 && edge1 === edge3 && edge1 === edge3)
+  if (edge1 === edge2 && edge2 === edge3)
     q4Result.innerHTML += `- These 3 edges form a <strong>equilateral triangle</strong><br>`;
 
   // Tam giac vuong
