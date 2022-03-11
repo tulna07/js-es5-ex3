@@ -78,15 +78,15 @@ const nums = document.getElementsByClassName("q1-input"),
   q1Result = document.getElementById("q1-result");
 
 q1SubmitBtn.onclick = function () {
-  const num1 = nums[0].value,
-    num2 = nums[1].value,
-    num3 = nums[2].value;
+  const num1 = +nums[0].value,
+    num2 = +nums[1].value,
+    num3 = +nums[2].value;
 
   var smallest, middle, largest;
 
   (() => {
-    (middle = num1 > num2 ? num1 : num2),
-      (smallest = middle == num1 ? num2 : num1);
+    middle = num1 > num2 ? num1 : num2;
+    smallest = middle === num1 ? num2 : num1;
 
     if (num3 > middle) {
       largest = num3;
@@ -96,6 +96,7 @@ q1SubmitBtn.onclick = function () {
     }
 
     largest = middle;
+
     middle = smallest > num3 ? smallest : num3;
     smallest = middle == num3 ? smallest : num3;
   })();
